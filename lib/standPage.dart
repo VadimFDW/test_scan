@@ -1,15 +1,14 @@
-import 'package:another_flushbar/flushbar.dart';
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:test_scan/TakePictureScreen.dart';
+
+import 'provider_models/take_picture_model.dart';
 
 class StandPage extends StatelessWidget {
   const StandPage({
     Key? key,
-    required this.camera,
     required this.title,
   }) : super(key: key);
-  final CameraDescription camera;
   final String title;
   @override
   Widget build(BuildContext context) {
@@ -21,9 +20,8 @@ class StandPage extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => TakePictureScreen(
-                camera: camera,
-              ),
+              builder: (context) =>
+                  TakePictureScreen(camera: Provider.of<TakePictureModel>(context, listen: false).camera),
             ),
           );
         },

@@ -1,11 +1,7 @@
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:test_scan/standPage.dart';
+import 'package:test_scan/StandPage.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({required this.camera});
-
-  final CameraDescription camera;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +19,6 @@ class HomePage extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => StandPage(
-                        camera: camera,
                         title: 'Стенд вино',
                       ),
                     ),
