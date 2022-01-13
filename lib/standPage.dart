@@ -31,9 +31,7 @@ class StandPage extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: 220,
-            // color: Colors.indigo,
-            child: Image.asset("assets/stand.jpeg"),
+            child: Image.asset("assets/stand.jpg"),
           )
         ],
       ),
